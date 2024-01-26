@@ -1,0 +1,9 @@
+{%extends 'devops/base.html'%}
+{%block content%}
+<p> add new server </p>
+    <form action="{%url 'devops:new_server'%}" method='post'>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name="submit"> add server </button>
+    </form>
+{%endblock content%}

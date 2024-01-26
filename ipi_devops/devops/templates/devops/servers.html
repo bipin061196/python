@@ -1,0 +1,18 @@
+{%extends 'devops/base.html'%}
+{%block content%}
+<p> these are the servers used in IPI devops </p>
+<p> 
+    <ul>
+        {%for server in servers%}
+        <li>
+            <a href="{%url 'devops:server' server.id%}" > {{server.text}} </a>
+        </li>
+        {%empty%}
+        <li> currently there isn't any server in the list </li>
+        {%endfor%}
+    </ul>
+</p>
+<p>
+    <a href="{%url 'devops:new_server'%}"> add server </a>
+</p>
+{%endblock content%}

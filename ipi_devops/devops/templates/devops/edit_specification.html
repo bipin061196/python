@@ -1,0 +1,9 @@
+{%extends 'devops/base.html'%}
+{%block content%}
+<p> edit specification </p>
+<form action="{%url 'devops:edit_specification' specification.id%}" method="post" >
+    {%csrf_token%}
+    {{form.as_div}}
+    <button name="submit"> Edit </button>
+</form>
+{%endblock content%}

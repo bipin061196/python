@@ -1,0 +1,20 @@
+{%extends 'devops/base.html'%}
+{%block content%}
+<p> Specificatoins of {{server.text}} are </p>
+<p> 
+    <a href="{%url 'devops:new_specification' server.id%}"> add new specification </a>
+</p>
+<p>
+    <ul>
+        {%for specification in specifications%}
+        <li> 
+            <p> {{specification.text}} </p>
+            <p> <a href="{%url 'devops:edit_specification' specification.id%}"> edit specification </a> </p>
+            </li>
+        
+        {%empty%}
+        <li> there are no specificats for server {{server.text}}</li>
+        {%endfor%}
+    </ul>
+</p>
+{%endblock content%}
